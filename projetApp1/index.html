@@ -1,0 +1,51 @@
+<doc <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test vue.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  
+  
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+     
+      <div class="input1" v-bind:class="{red:active}">
+        <label for="name">Change H1</label>
+        <input id="name" type="text" v-model.lazy="titre1" />          
+        <h1>{{ titre1 }}</h1>
+      </div>
+
+      <div class="input2" v-bind:class="{red:active}">
+        <label for="name">Change H2</label>
+        <input id="name" type="text" v-model="titre2" />
+        <button v-on:click="update = titre2">yoo</button>
+        <h2>{{ update }}</h2>          
+      </div>
+
+      <input type="checkbox" id="checkbox" v-model="active">
+      <label for="checkbox">{{ checked }}</label>
+
+      <button @click="show = !show" :aria-expanded="show ? 'true' : 'false'">
+          Show picture
+      </button>
+        <div v-if="show"><img src="minions.png"></div>
+      
+
+    </div>    
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js
+"></script>
+<script src="js.js"></script>
+
+</body>
+</html>
+
+
+
+
